@@ -1,0 +1,281 @@
+/**
+ * SASS/SCSS/Compass Transcription of Skeleton Responsive Grid
+ * originally authored by Dave Gamache. This translation offers
+ * mixins that support fluid and as well as fixed grids to supplement
+ * the work that Dave Gamache has done.
+ * @author Dennis Thompson <http://www.atomicpages.net>
+ * @copyright Copyright (c) 2013 AtomicPages LLC
+ * @license MIT
+ * @version 1.4.2
+ */
+
+// IMPORTS
+@import "vars"; // import _global_variables.scss
+@import "mixins"; // import _mixins.scss
+
+
+
+/* SITE STYLES
+ * ------------------------------------------------ */
+/* Add site styles here such as a { color: #000; } */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+body {
+	padding-top: 28px;
+}
+.header {
+	text-align: center;
+}
+.nav {
+	border-top:solid 3px $black;
+	border-bottom: solid 1px $black;
+	margin-bottom: 25px;
+	.menu {
+		margin: 6px 0;
+		text-transform: uppercase;
+		font-size: 12px;
+		letter-spacing: .2em;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			margin: 0;
+			padding: 0 50px;
+			a {
+				color: $red;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+/* Home Header Box
+ * ------------------------------------------------ */
+
+.home-bio {
+	background: $red;
+	color: white;
+	margin-bottom: 20px;
+	img {
+		float: left;
+		width: 220px;
+	}
+	.content {
+		width: 480px;
+		float: left;
+		font-size: 16px;
+		line-height: 27px;
+		padding: 17px 20px;
+		strong, b {
+			font-size: 24px;
+			color: white;
+		}
+
+	}
+}
+
+
+/* Sidebar
+ * ------------------------------------------------ */
+
+.sidebar {
+	.social {
+		text-align: center;
+		a {
+			text-decoration: none;
+			display: inline-block;
+			&:nth-child(2) {
+				margin: 0 31px;
+			}
+		}
+	}
+	.newsletter {
+		border-top: 3px solid $gold;
+		border-bottom: 1px solid $gold;
+		margin: 16px 0;
+		padding: 16px 0 0;
+		p {
+			margin: 0;
+
+		}
+		input[type=submit] {
+			margin-left: 0px;
+		}
+	}
+	.twitter-feed {
+		h6 {
+			background: $black;
+			padding: 12px 6px;
+			font-weight: 700;
+			a {
+				color: $white;
+				text-decoration: none;
+				text-transform: uppercase;
+				letter-spacing: .1em;
+				font-size: 11px;
+				span {
+					color: $gold;
+					text-transform: lowercase;
+				}
+			}
+		}
+		ul {
+			text-align: center;
+			margin: 0;
+			li {
+				color: $red;
+				margin: 0;
+				a {
+					color: $red;
+				}
+				.rstw_comma {
+					display: none;
+				}
+				.twitter-timestamp {
+					display: block;
+					color: $gold;
+					text-transform: uppercase;
+					border-top: 3px solid $black;
+					border-bottom: 1px solid $black;
+				}
+			}
+		}
+	}
+	.instagram-feed {
+		line-height: 1;
+		h6 {
+			background: $black;
+			padding: 12px 6px;
+			font-weight: 700;
+			color: $white;
+			text-transform: uppercase;
+			letter-spacing: .1em;
+			a {
+				color: $white;
+				text-decoration: none;
+				text-transform: uppercase;
+				letter-spacing: .1em;
+				font-size: 11px;
+				color: $gold;
+				text-transform: lowercase;
+			}
+		}
+
+		.meta {
+			color: $white;
+			text-align: center;
+			background: $red;
+			display: block;
+			margin-top: -5px;
+			padding: 10px 0;
+			.comments, .likes {
+				display: inline-block;
+				margin: 0 20px;
+				font-weight: 900;
+				margin-top: -3px;
+				.numbers {
+					display: inline-block;
+					margin-top: -3px;
+				}
+				img {
+					display: inline-block;
+					margin-top: 0;
+				}
+			}
+
+		}
+		ul {
+			margin: 0;
+			li {
+				margin: 0;
+			}
+		}
+		a {
+			color: $white;
+			text-decoration: none;
+		}
+	}
+}
+
+/* POSTS
+ * ------------------------------------------------ */
+.post, .page {
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid $gray;
+	.post-cats, .post-pub {
+		text-transform: uppercase;
+		font-size: 12px;
+		letter-spacing: .2em;
+		color: $red;
+		line-height: 1.3;
+		a {
+			color: $black;
+			text-decoration: none;
+		}
+	}
+	h2 {
+		font-size: 48px;
+		line-height: 64px;
+		text-transform: uppercase;
+		letter-spacing: .2em;
+		border-top:3px solid $gold;
+		border-bottom: 1px solid $gold;
+		margin-top: 5px;
+		a {
+			text-decoration: none;
+		}
+	}
+	.read-more {
+		display: inline-block;
+		color: white;
+		background: $red;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 12px;
+		letter-spacing: .1em;
+		line-height: 1;
+		padding: 10px 12px 8px;
+		border: 1px solid $red;
+		&:hover {
+			background: $white;
+			color: $red;
+		}
+	}
+}
+
+
+
+/* MEDIA QUERIES
+ * ------------------------------------------------ */
+/* Otherwise known as custom responsive code! Write it here! */
+@media only screen and (min-width: $baseWidthMQ) and (max-width: 1280px) {
+	/* add code here */
+}
+
+/* Smaller than standard #{strip-units($baseWidthMQ)} (devices and browsers) */
+@media only screen and (max-width: $baseWidthMQ - 1) {
+	/* add code here */
+}
+
+/* Tablet Portrait size to standard #{strip-units($baseWidthMQ)} (devices and browsers) */
+@media only screen and (min-width: $tabletWidth) and (max-width: $baseWidthMQ - 1) {
+	/* add code here */
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: $tabletWidth - 1) {
+	/* add code here */
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: $tabletWidth - 1) {
+	/* add code here */
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+	/* add code here */
+}
