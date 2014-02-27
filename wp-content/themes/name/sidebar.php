@@ -30,13 +30,13 @@
 		<?php get_search_form(); ?>
 	</section>
 
-	<section class="cats">
+	<ul class="cats">
 		<?php wp_list_categories()?>
-	</section>
+	</ul>
 
-	<section class="archive">
+	<ul class="archive">
 		 <?php wp_get_archives(); ?>
-	</section>
+	</ul>
 
 </aside>
 

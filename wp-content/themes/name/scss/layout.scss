@@ -10,6 +10,7 @@
  */
 
 // IMPORTS
+@import "compass";
 @import "vars"; // import _global_variables.scss
 @import "mixins"; // import _mixins.scss
 
@@ -43,9 +44,21 @@ body {
 			display: inline-block;
 			margin: 0;
 			padding: 0 50px;
+			
+			&.current-menu-item a{
+				color: $gold;
+			}
+			
 			a {
 				color: $red;
 				text-decoration: none;
+				
+				@include single-transition(color, 500ms);
+				
+				
+				&:hover {
+					color: $gold;
+				}
 			}
 		}
 	}
@@ -57,7 +70,9 @@ body {
 .home-bio {
 	background: $red;
 	color: white;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
+	min-height: 330px;
+	
 	img {
 		float: left;
 		width: 220px;
@@ -67,7 +82,7 @@ body {
 		float: left;
 		font-size: 16px;
 		line-height: 27px;
-		padding: 17px 20px;
+		padding: 17px 20px 0;
 		strong, b {
 			font-size: 24px;
 			color: white;
@@ -81,6 +96,11 @@ body {
  * ------------------------------------------------ */
 
 .sidebar {
+	section {
+		float: left;
+		width: 100%;
+	}
+
 	.social {
 		text-align: center;
 		a {
@@ -91,6 +111,8 @@ body {
 			}
 		}
 	}
+	
+	//NEWSLETTER
 	.newsletter {
 		border-top: 3px solid $gold;
 		border-bottom: 1px solid $gold;
@@ -98,12 +120,15 @@ body {
 		padding: 16px 0 0;
 		p {
 			margin: 0;
+			color: lighten($black, 50);
 
 		}
 		input[type=submit] {
 			margin-left: 0px;
 		}
 	}
+	
+	//TWITTER
 	.twitter-feed {
 		h6 {
 			background: $black;
@@ -126,7 +151,7 @@ body {
 			margin: 0;
 			li {
 				color: $red;
-				margin: 0;
+				margin: 10px 0 20px;
 				a {
 					color: $red;
 				}
@@ -139,10 +164,14 @@ body {
 					text-transform: uppercase;
 					border-top: 3px solid $black;
 					border-bottom: 1px solid $black;
+					padding: 5px 0;
+					margin-top: 10px;
 				}
 			}
 		}
 	}
+	
+	//INSTAGRAM
 	.instagram-feed {
 		line-height: 1;
 		h6 {
@@ -186,6 +215,7 @@ body {
 			}
 
 		}
+		
 		ul {
 			margin: 0;
 			li {
@@ -197,6 +227,82 @@ body {
 			text-decoration: none;
 		}
 	}
+
+	//SEARCH
+	#searchform {
+		float: left;
+		width: 100%;
+		margin: 40px 0 30px;
+		
+		input {
+			float: left;
+		}
+		
+		input[type="text"] {
+			width: 80%;
+			margin: 0;
+		}
+		input[type="submit"] {
+			width: 20%;
+			float: right;
+			margin: 0;
+		}
+	}
+	
+	//CATEGORY LIST
+	ul.cats,
+	ul.archive {
+		float: left;
+		width: 100%;
+	
+		li,
+		ul,
+		ul li,
+		a {
+			margin: 0;
+			width: 100%;
+			color: white;
+			text-decoration: none;
+		}
+		
+		& > li {
+			text-transform: uppercase;
+			background: black;
+			padding: 20px 0 0px 10px;
+			
+			ul {
+				width: 104.7%;
+				padding-top: 10px;
+				background: $black;
+				margin-left: -10px;
+
+				li {
+					float: left;
+					width: 100%;
+					overflow: visible;
+					
+					padding: 5px 0px 5px 10px;
+					border-bottom: 1px solid white;
+					background: $red;
+					
+					@include single-transition(background, 1s);
+					
+					&:hover {
+						background: $black;
+					}
+
+					a {
+						float: left;
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		
+		
+	}
+	
 }
 
 /* POSTS
